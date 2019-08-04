@@ -33,9 +33,13 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include "defines.h"
 
+#if defined(GOOGLETEST)
+#define ghHeap GetProcessHeap()
+#else
 extern HANDLE ghHeap;
+#endif
 
-#if defined(_DEBUG) || (ConEmuVersionStage == CEVS_ALPHA)
+#if defined(_DEBUG) || (ConEmuVersionStage == CEVS_ALPHA) || defined(GOOGLETEST)
 #define TRACK_MEMORY_ALLOCATIONS
 #endif
 

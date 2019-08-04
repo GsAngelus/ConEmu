@@ -4,6 +4,9 @@
     <Filter Include="UnitTests">
       <UniqueIdentifier>{F8411ACB-64AC-CE41-ADEA-7FE71994AC96}</UniqueIdentifier>
     </Filter>
+    <Filter Include="common">
+      <UniqueIdentifier>{AEFEE3F6-9AA0-0ECD-835B-22216F9C951D}</UniqueIdentifier>
+    </Filter>
     <Filter Include="modules">
       <UniqueIdentifier>{FEAC8BD4-6A8C-0A70-73A4-9546DF0271D1}</UniqueIdentifier>
     </Filter>
@@ -20,6 +23,48 @@
   <ItemGroup>
     <ClCompile Include="UnitTests\main_test.cpp">
       <Filter>UnitTests</Filter>
+    </ClCompile>
+    <ClCompile Include="common\CEStr.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\CmdLine.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\EnvVar.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\MAssert.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\MModule.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\MProcess.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\MStrDup.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\MStrSafe.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\Memory.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\RConStartArgs.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\RConStartArgsEx.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\WObjects.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\WThreads.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\WUser.cpp">
+      <Filter>common</Filter>
     </ClCompile>
     <ClCompile Include="modules\googletest\googletest\src\gtest-all.cc">
       <Filter>modules\googletest\googletest\src</Filter>

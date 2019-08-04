@@ -40,8 +40,11 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define _ASSERTE(x)
 #endif
 
+
 static std::atomic_int gHeapInit, gHeapCounter;
+#if !defined(GOOGLETEST)
 HANDLE ghHeap = NULL;
+#endif
 
 // Debugging purposes
 void* g_LastDeletePtr = NULL;
@@ -87,6 +90,7 @@ bool HeapInitialize()
 	// Our allocator is used in construction of global MArrays
 	++gHeapInit;
 
+	#if !defined(GOOGLETEST)
 	if (ghHeap == NULL)
 	{
 		//#ifdef MVALIDATE_POINTERS
@@ -96,12 +100,14 @@ bool HeapInitialize()
 		//#endif
 		_ASSERTE(gHeapInit == 1);
 	}
+	#endif
 
 	return (ghHeap != NULL);
 }
 
 static void HeapDeinitializeImpl()
 {
+	#if !defined(GOOGLETEST)
 	if (!ghHeap || gHeapCounter > 0 || gHeapInit > 0)
 	{
 		_ASSERTE(ghHeap && gHeapCounter == 0 && gHeapInit == 0);
@@ -111,6 +117,7 @@ static void HeapDeinitializeImpl()
 		HeapDestroy(ghHeap);
 		ghHeap = NULL;
 	}
+	#endif
 }
 
 void HeapDeinitialize()
