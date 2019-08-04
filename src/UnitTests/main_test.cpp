@@ -1,6 +1,7 @@
 //#include "tests.h"
 #include <iostream>
 #include <gtest/gtest.h>
+#include "../ConEmu/helper.h"
 
 namespace {
 TEST(ConEmuTest, Main) {
@@ -10,9 +11,7 @@ TEST(ConEmuTest, Main) {
 }
 
 int main(int argc, char** argv) {
-	std::cout << "Entering main" << std::endl;
-	//HeapInitialize();
-	std::cout << "Heap Initialized" << std::endl;
+	initMainThread();
 	::testing::InitGoogleTest(&argc, argv);
 	return RUN_ALL_TESTS();
 }
